@@ -6,20 +6,16 @@ const logger = require('morgan');
 const mongoose = require('mongoose');
 
 // Routes
+const productoRouter = require('./routes/producto');
 const publicacionRouter = require('./routes/publicacion');
 
 // App
 const app = express();
 
 // DB Cloud Atlas
-/*mongoose.connect('mongodb+srv://ArquiAdmin:ArquiAdmin@cluster0-alitq.mongodb.net/test?retryWrites=true',
-    {
-        useNewUrlParser: true
-    });
-*/
 
 //DB MongoDB
-mongoose.connect('mongodb://localhost:27017/Nidoo',
+mongoose.connect('mongodb://localhost:27017/ParentsAcademy',
     {
       useNewUrlParser: true
     });
@@ -37,7 +33,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/publicaciones', publicacionRouter);
+app.use('/producto', productoRouter);
+app.use('/publicacion', publicacionRouter);
+
 
 module.exports = app;
 
