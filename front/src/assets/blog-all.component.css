@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600');
+
+.blog-all{
+    background: #B7E9E3;
+    color: #444;
+    font-family: 'Work Sans', sans-serif;
+}
+
+
+  /* Footer links */
+  
+  .footer-distributed .footer-links{
+    color:  #444;
+    margin: 20px 0 12px;
+    padding: 0;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: normal;
+  }
+  
+  .footer-distributed .footer-links a{
+    display:inline-block;
+    line-height: 1.8;
+    text-decoration: none;
+    color:  inherit;
+    font-weight: normal;
+  }  
+  
