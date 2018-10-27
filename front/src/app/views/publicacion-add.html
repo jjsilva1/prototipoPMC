@@ -1,0 +1,38 @@
+<h3>{{tituloA}}</h3>
+<hr/>
+
+<form #formPublicacion="ngForm" (ngSubmit)="onSubmit()" class="col-lg-6" id="form-publicacion">
+
+    <label>
+		Título
+		<span *ngIf="!titulo.valid && titulo.touched" class="label label-danger">El título es obligatorio</span>
+	</label>
+    <input type="text" #titulo="ngModel" name="titulo" [(ngModel)]="publicacion.titulo" class="form-control" required />
+
+    <label>
+		Contenido
+		<span *ngIf="!contenido.valid && contenido.touched" class="label label-danger">El blog debe tener un contenido.</span>
+	</label>
+    <textarea #contenido="ngModel" name="contenido" [(ngModel)]="publicacion.contenido" class="form-control" required></textarea>
+
+    <label>
+		Autor
+		<span *ngIf="!autor.valid && autor.touched" class="label label-danger">Este campo es obligatorio</span>
+	</label>
+    <input type="text" #autor="ngModel" name="autor" [(ngModel)]="publicacion.autor" class="form-control" required />
+
+    <label>
+		Categoría
+		<span *ngIf="!categoria.valid && categoria.touched" class="label label-danger">Este campo es obligatorio</span>
+	</label>
+    <input type="text" #categoria="ngModel" name="categoria" [(ngModel)]="publicacion.categoria" class="form-control" required />
+
+    <!--<label>Imagen</label>
+    <div *ngIf="is_edit">
+        <img src="http://localhost/curso-angular4-backend/uploads/{{producto.imagen}}" width="60" />
+    </div>
+    <input type="file" class="form-control" (change)="fileChangeEvent($event)" />-->
+
+    <br/>
+    <input type="submit" value="Enviar" [disabled]="!formPublicacion.form.valid" class="btn btn-success" />
+</form>

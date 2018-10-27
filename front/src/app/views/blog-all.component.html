@@ -1,0 +1,31 @@
+<div class="recuadro">
+    <h3 class="titulo_productos">{{titulo1}}</h3>
+    <hr/>
+
+    <div *ngIf="!postsBlog">
+        Cargando listado de blogs...
+    </div>
+    <div *ngIf="postsBlog">
+        <div class="row">
+            <div class="col-lg-3" *ngFor="let post of postsBlog">
+                <div class="thumbnail">
+                    <div class="caption">
+                        <h3 align="center" class="nombre_prod">{{post.titulo}}</h3>
+                        <h5 align="center" class="nombre_prod">Autor:{{post.autor}}</h5>
+                        <h5 align="center" class="nombre_prod">Categoría:{{post.categoria}}</h5>
+
+
+
+                        <!--<div class="seguro" *ngIf="confirmado == producto.id">
+                            <a (click)="onDeleteProducto(producto.id)" class="btn btn-md btn-danger">
+								Quiero eliminarlo
+							</a>
+                            <a (click)="cancelarConfirm()" class="btn btn-md btn-warning">Cancelar</a>
+                            <a [routerLink]="['/producto', producto._id]" class="btn btn-md btn-primary">Ver</a>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
